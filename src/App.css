@@ -1,0 +1,67 @@
+button {
+  border-radius: 8px;
+  padding: 3px 15px;
+  margin: 20px;
+  font-size: 0.9em;
+  font-weight: 600;
+  cursor: pointer;
+  border-color: #1a1a1a;
+  border-width: 1px;
+}
+
+.delete-button:hover {
+  color: rgb(214, 39, 39);
+  background-color: #e5e5e5;
+}
+
+.add-button:hover {
+  color:rgb(23, 130, 4);
+  background-color:#e5e5e5;
+}
+
+.container {
+  display: flex;  
+  align-items: center; 
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 100%;
+  margin: 20px;
+}
+
+h1 {
+  padding: 20px 40px;
+  background-color: #1a1a1a;
+  color: rgb(209, 209, 209);
+  font-size: 2em;
+  line-height: 1.1;
+  font-weight: 600;
+}
+
+label {
+  color: #0f0f0f;
+  margin: 10px;
+}
+
+table {
+  width: 80%;
+  margin-top: 30px;
+  justify-self: center;
+  text-align: center;
+  border-collapse: separate;
+  border-spacing: 40px 0;
+  
+}
+
+table th {
+  padding: 8px 0px;
+  border-bottom: 1px groove #0f0f0f;
+  width: 50%;
+}
+
+table td {
+  padding: 4px;
+}
+
+
+
+
