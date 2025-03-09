@@ -1,7 +1,7 @@
 export type Todo = {
     description: string;
     date: string;
-    priority: number;
+    priority: string;
 }
 
 export type TodoTableProps = {

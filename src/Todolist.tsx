@@ -14,22 +14,24 @@ function TodoList() {
             cellStyle: (params) =>
             params.value === "High" ? { color: "red" } : { color: "black" },
         },
-        {field: "date", filter: true, floatingFilter: true, flex:1},
-    ])
+        {field: "date", filter: true, floatingFilter: true, flex:1,
+            valueGetter: (params) => params.data?.date ? new Date(params.data.date).toLocaleDateString("fi-FI") : ""
+        },
+    ]);
 
     const [todos, setTodos] = useState<Todo[]>([]);
     const [todo, setTodo] = useState<Todo>({description: "", date: "", priority: ""});
 
     useEffect(() => setTodo(
         {...todo, priority: selectRef.current?.value || "Low"}
-        ),[]);
+        ),[todo]);
 
     const addTodo = () => {
         !todo.description && inputRef.current ?
         inputRef.current.focus() : (
         setTodos([...todos, todo])
         );
-        setTodo({...todo, description: "", date:"", priority: ""});
+        setTodo({...todo, description: "", date:"", priority: selectRef.current?.value || "Low"});
     };
 
     const deleteTodo = () => gridRef.current?.api.getSelectedNodes().length ? setTodos(() => todos.filter((todo, i) => i !== Number(gridRef.current?.api.getSelectedNodes()[0].id))) : alert("Select a row first!");
@@ -73,7 +75,7 @@ function TodoList() {
                         value={todo.priority}
                         onChange={handleChange}
                     >
-                        <option value="Low" selected>Low</option>
+                        <option value="Low">Low</option>
                         <option value="Medium">Medium</option>
                         <option value="High">High</option>
                     </select>
