@@ -1,10 +1,10 @@
 import "./App.css"
 import Container from "@mui/material/Container"
 import CssBaseline from "@mui/material/CssBaseline"
-import TodoList from "./Todolist"
 import AppBar from "@mui/material/AppBar"
 import Toolbar from "@mui/material/Toolbar"
 import Typography from "@mui/material/Typography"
+import MuiTabs from "./Tabs"
 
 function App() {          
   return (
@@ -15,7 +15,7 @@ function App() {
           <Typography variant="h5">My Todos</Typography>
         </Toolbar>
       </AppBar>
-      <TodoList />
+      <MuiTabs />
     </Container>
   )
 }
